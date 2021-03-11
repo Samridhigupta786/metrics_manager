@@ -31,8 +31,8 @@ To run as docker container
 #HELP sample_external_url_response_ms response time for url  
 #TYPE sample_external_url_response_ms counter  
 
-sample_external_url_response_ms{url="https://httpstat.us/200"} 3.55105526e+08  
-sample_external_url_response_ms{url="https://httpstat.us/503"} 7.09015772e+08  
+sample_external_url_response_ms{url="https://httpstat.us/200"} 387  
+sample_external_url_response_ms{url="https://httpstat.us/503"} 803  
 
 #HELP sample_external_url_up shows if url is up  
 #TYPE sample_external_url_up counter  
