@@ -5,17 +5,20 @@ e.g. sample_external_url_up{url="https://httpstat.us/503"} 0
 
 To achieve the expected output, I used prometheus, promauto, and promhttp Go libraries, to expose my custom metrics along with the go metrics.
 
+# Before you begin
+Download and install golang  
+  * Download the installer from the page https://golang.org/dl/ and install the package.  
+  * Create a Go workspace and set GO PATH  
 
 # Getting Started
 
 To run the code locally 
-
-1. clone the git repository 
-2. In the same directory run "go mod download" 
+1. clone this git repository in the Go workspace
+2. In the root directory of the git repo, run "go mod download" or you can run "go mod tidy"
 3. change directory "cd metrics_manager"
-4. run go main.go collector.go
-5. Application will start running in the local
-6. curl -l localhost:8080 to see output with expected result in the end 
+4. run "go run main.go collector.go"
+5. Application will start running in the local (make sure no other application is running on 8080)
+7. curl -l localhost:8080 to see output with expected result in the end 
 
 
 To run as docker container
@@ -28,8 +31,8 @@ To run as docker container
 #HELP sample_external_url_response_ms response time for url  
 #TYPE sample_external_url_response_ms counter  
 
-sample_external_url_response_ms{url="https://httpstat.us/200"} 3.55105526e+08  
-sample_external_url_response_ms{url="https://httpstat.us/503"} 7.09015772e+08  
+sample_external_url_response_ms{url="https://httpstat.us/200"} 387  
+sample_external_url_response_ms{url="https://httpstat.us/503"} 803  
 
 #HELP sample_external_url_up shows if url is up  
 #TYPE sample_external_url_up counter  
@@ -56,7 +59,7 @@ Steps to See the custom metrics on Prometheus Dashboard
  
  # Kubernetes Deployment
  
- Provided the kubernetes deployment file for the Go Application and ran it on locally on minikube
+ Provided the kubernetes deployment file named as "deployment_metrics_manager.yaml" for the Go Application and ran it on locally on minikube
 
  
 # Screen Shots of output from prometheus, grafana and local application run
