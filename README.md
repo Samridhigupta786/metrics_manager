@@ -59,7 +59,7 @@ Steps to See the custom metrics on Prometheus Dashboard
  
  # Kubernetes Deployment
  
- Provided the kubernetes deployment file for the Go Application and ran it on locally on minikube
+ Provided the kubernetes deployment file named as "deployment_metrics_manager.yaml" for the Go Application and ran it on locally on minikube
 
  
 # Screen Shots of output from prometheus, grafana and local application run
