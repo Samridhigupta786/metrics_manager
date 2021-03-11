@@ -45,7 +45,7 @@ sample_external_url_up{url="https://httpstat.us/503"} 0
 Steps to See the custom metrics on Prometheus Dashboard
  1. From root diectory of the repo, do "cd Prometheus"
  2. Build the prometheus image using cmd "docker build -t my-prometheus -f prom.Dockerfile ."
- 3. Addition Info : We have a "prometheus.yml" file in the /prometheus folder, which is custom config file contains the scrape config for the go application.In the docker file, we use our "prometheus.yml" to get the metrics.
+ 3. Addition Info : We have a "prometheus.yml" file in the /prometheus folder, which is custom config file contains the scrape config for the go application, the "target" field is set as localhost:8080 if running locally else set it as ClusterIP/name:port of the kubernetes Service created for it.In the dockerfile, we copy our custom "prometheus.yml" to get the metrics.
  4. Run the image using cmd "docker run  -d  --network host --name my-prometheus-p 9090:9090  my-prometheus"
  5. Go to http://localhost:9090 , you will be able to see the custom metrics added on the go application.
  
