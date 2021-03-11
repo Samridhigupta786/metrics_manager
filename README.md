@@ -13,7 +13,7 @@ To run the code locally
 1. clone the git repository 
 2. In the same directory run "go mod download" 
 3. change directory "cd metrics_manager"
-4. run go main.go collector.go
+4. run "go run main.go collector.go"
 5. Application will start running in the local
 6. curl -l localhost:8080 to see output with expected result in the end 
 
