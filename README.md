@@ -5,17 +5,20 @@ e.g. sample_external_url_up{url="https://httpstat.us/503"} 0
 
 To achieve the expected output, I used prometheus, promauto, and promhttp Go libraries, to expose my custom metrics along with the go metrics.
 
+# Before you begin
+Download and install golang  
+  * Download the installer from the page https://golang.org/dl/ and install the package.  
+  * Create a Go workspace and set GO PATH  
 
 # Getting Started
 
 To run the code locally 
-
-1. clone the git repository 
-2. In the same directory run "go mod download" 
+1. clone this git repository in the Go workspace
+2. In the root directory of the git repo, run "go mod download" or you can run "go mod tidy"
 3. change directory "cd metrics_manager"
 4. run "go run main.go collector.go"
-5. Application will start running in the local
-6. curl -l localhost:8080 to see output with expected result in the end 
+5. Application will start running in the local (make sure no other application is running on 8080)
+7. curl -l localhost:8080 to see output with expected result in the end 
 
 
 To run as docker container
